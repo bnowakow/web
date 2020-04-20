@@ -1,1 +1,1 @@
-export { default as UserDataChange } from './UserDataChangeContainer';
+export { default as UserDataChange } from './UserDataChange';

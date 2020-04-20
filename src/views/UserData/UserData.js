@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
 import { Content, Container, View } from '../../theme/grid';
-import { Actions } from '../Registration/Registration.styled';
+import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Paragraph, Title } from '../../theme/typography';
 
 import './UserData.scss';

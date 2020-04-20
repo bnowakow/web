@@ -1,15 +1,15 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
-import { Button, Checkbox, TextField } from '../../../../components';
+import { Button, Checkbox, TextField } from '../../..';
 import { FIELD_NAME, FIELD_TERM1 } from '../../../../constants';
 
 import useModalContext from '../../../../hooks/useModalContext';
-import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
-import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
+import PrivacyPolicyContent from '../../../../views/PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
+import RegulationsContent from '../../../../views/Regulations/component/RegulationsContent/RegulationsContent';
 
 import { Annotation, TextLink } from '../../../../theme/typography';
-import { Actions, Title } from '../../Registration.styled';
+import { Actions, Title } from '../../ImprintFiller.styled';
 import './Name.scss';
 
 const Name = ({ editMode }) => {
