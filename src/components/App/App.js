@@ -20,6 +20,7 @@ import {
   Regulations,
   RiskTestData,
   UserData,
+  UserDataChange,
   UserDataSettings,
   InstallAppAndroid,
   InstallAppIOS,
@@ -134,6 +135,11 @@ function App() {
                 exact
                 path={Routes.MatchedDevices}
                 component={MatchedDevices}
+              />
+              <Route
+                exact
+                path={Routes.UserDataChange}
+                component={UserDataChange}
               />
               <Route
                 exact

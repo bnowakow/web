@@ -16,6 +16,7 @@ const Routes = {
   Regulations: '/regulations',
   Diagnosis: '/diagnosis',
   UserData: '/user-data',
+  UserDataChange: '/user-data/change',
   UserDataSettings: '/user-data/settings',
   MatchedDevices: '/matched-devices',
   HospitalsList: '/hospitals-list',

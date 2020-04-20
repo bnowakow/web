@@ -12,7 +12,7 @@ import { Annotation, TextLink } from '../../../../theme/typography';
 import { Actions, Title } from '../../Registration.styled';
 import './Name.scss';
 
-const Name = () => {
+const Name = ({ editMode }) => {
   const {
     errors,
     handleChange,
@@ -34,15 +34,22 @@ const Name = () => {
     });
   };
 
-  const disabled = !values[FIELD_NAME] || !values[FIELD_TERM1];
+  const disabled = (() => {
+    if (editMode) {
+      return !values[FIELD_NAME];
+    }
+    return !values[FIELD_NAME] || !values[FIELD_TERM1];
+  })();
 
   return (
     <>
-      <div className="worth-it">
-        <Title>
-          Pomóż sobie i innym. <br /> Zaczynamy!
-        </Title>
-      </div>
+      {!editMode && (
+        <div className="worth-it">
+          <Title>
+            Pomóż sobie i innym. <br /> Zaczynamy!
+          </Title>
+        </div>
+      )}
       <TextField
         error={errors[FIELD_NAME]}
         label="Jak masz na imię?"
@@ -51,33 +58,36 @@ const Name = () => {
         name={FIELD_NAME}
         value={values[FIELD_NAME]}
       />
-      <FormGroup>
-        <Checkbox
-          checked={values[FIELD_TERM1]}
-          label={
-            <Annotation>
-              Oświadczam, że zapoznałem/am się z{' '}
-              <TextLink
-                onClick={() => openModal(<RegulationsContent />)}
-                role="button"
-              >
-                Regulaminem
-              </TextLink>{' '}
-              ProteGO Safe oraz{' '}
-              <TextLink
-                onClick={() => openModal(<PrivacyPolicyContent />)}
-                role="button"
-              >
-                Polityką Prywatności
-              </TextLink>{' '}
-              i akceptuję ich postanowienia.
-            </Annotation>
-          }
-          error={errors[FIELD_TERM1]}
-          name={FIELD_TERM1}
-          onChange={() => setFieldValue(FIELD_TERM1, !values[FIELD_TERM1])}
-        />
-      </FormGroup>
+      {!editMode && (
+        <FormGroup>
+          <Checkbox
+            checked={values[FIELD_TERM1]}
+            label={
+              <Annotation>
+                Oświadczam, że zapoznałem/am się z{' '}
+                <TextLink
+                  onClick={() => openModal(<RegulationsContent />)}
+                  role="button"
+                >
+                  Regulaminem
+                </TextLink>{' '}
+                ProteGO Safe oraz{' '}
+                <TextLink
+                  onClick={() => openModal(<PrivacyPolicyContent />)}
+                  role="button"
+                >
+                  Polityką Prywatności
+                </TextLink>{' '}
+                i akceptuję ich postanowienia.
+              </Annotation>
+            }
+            error={errors[FIELD_TERM1]}
+            name={FIELD_TERM1}
+            onChange={() => setFieldValue(FIELD_TERM1, !values[FIELD_TERM1])}
+          />
+        </FormGroup>
+      )}
+
       <Actions>
         <Button disabled={disabled} onClick={handleClick} text="Dalej" />
       </Actions>
