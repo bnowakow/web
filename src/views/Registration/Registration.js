@@ -41,9 +41,9 @@ const Registration = () => {
       .min(3, 'Za krótkie imię')
       .max(20, 'Za długie imię')
       .required('Imię jest wymagane'),
-    // [constants.FIELD_PHONE]: Yup.string().required(
-    //   'Numer telefonu jest wymagany'
-    // ),
+    [constants.FIELD_PHONE]: Yup.string().required(
+      'Numer telefonu jest wymagany'
+    ),
     [constants.FIELD_TERM1]: Yup.boolean().oneOf(
       [true],
       'Proszę zaznaczyć zgodę'
@@ -74,7 +74,7 @@ const Registration = () => {
 
     const data = {
       name: form[constants.FIELD_NAME],
-      // phone: form[constants.FIELD_PHONE],
+      phone: form[constants.FIELD_PHONE],
       sex: resolveSex(form[constants.FIELD_SEX]),
       age: form[constants.FIELD_AGE],
       chronicSicks: [...chronicSicks],

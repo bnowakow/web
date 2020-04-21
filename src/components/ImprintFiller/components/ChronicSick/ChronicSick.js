@@ -9,12 +9,7 @@ import {
   VALUE_IS_CHRONIC_SICK_YES
 } from '../../../../constants';
 
-import {
-  Button,
-  Checkbox,
-  Radio,
-  TextField
-} from '../../..';
+import { Button, Checkbox, Radio, TextField } from '../../..';
 
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
@@ -51,7 +46,7 @@ const ChronicSick = () => {
 
   const goToNextStep = () => {
     if (isAnyFieldSelected()) {
-      setFieldValue('step', 5);
+      setFieldValue('step', 6);
     }
   };
 

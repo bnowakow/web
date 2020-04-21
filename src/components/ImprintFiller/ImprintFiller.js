@@ -8,6 +8,7 @@ import {
   BloodGroup,
   ChronicSick,
   Name,
+  PhoneNumber,
   Sex,
   Smoke,
   Summary
@@ -22,18 +23,21 @@ const steps = {
     Component: Name
   },
   2: {
-    Component: Sex
+    Component: PhoneNumber
   },
   3: {
-    Component: Age
+    Component: Sex
   },
   4: {
-    Component: ChronicSick
+    Component: Age
   },
   5: {
-    Component: BloodGroup
+    Component: ChronicSick
   },
   6: {
+    Component: BloodGroup
+  },
+  7: {
     Component: Smoke
   }
 };
@@ -49,7 +53,7 @@ const ImprintFiller = ({ editMode }) => {
     }
   }, [step]);
 
-  if (step === 7) {
+  if (step === 8) {
     return <Summary />;
   }
 

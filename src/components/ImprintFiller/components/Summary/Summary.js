@@ -7,7 +7,8 @@ import {
   FIELD_AGE,
   FIELD_BLOOD_GROUP,
   FIELD_SEX,
-  FIELD_SMOKE_NUMBER
+  FIELD_SMOKE_NUMBER,
+  FIELD_PHONE
 } from '../../../../constants';
 import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
 
@@ -39,8 +40,8 @@ const Summary = () => {
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
             sex: values[FIELD_SEX],
-            smokeNumber: values[FIELD_SMOKE_NUMBER]
-            // phone: values[FIELD_PHONE]
+            smokeNumber: values[FIELD_SMOKE_NUMBER],
+            phone: values[FIELD_PHONE]
           }}
         />
         <Actions>

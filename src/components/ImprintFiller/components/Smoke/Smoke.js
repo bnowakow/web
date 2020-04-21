@@ -73,7 +73,7 @@ const Smoke = () => {
       <Actions>
         <Button
           disabled={!values[FIELD_SMOKE]}
-          onClick={() => setFieldValue('step', 7)}
+          onClick={() => setFieldValue('step', 8)}
           icon={Icon}
           size="medium"
           text="Dalej"

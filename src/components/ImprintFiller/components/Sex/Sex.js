@@ -38,7 +38,7 @@ const Sex = () => {
       <Actions>
         <Button
           disabled={disabled}
-          onClick={() => setFieldValue('step', 3)}
+          onClick={() => setFieldValue('step', 4)}
           icon={Icon}
           size="medium"
           text="Dalej"
