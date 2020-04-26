@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Badge,
   Container,
-  Smile,
+  Qualification,
   Info,
   InfoBorder,
   BordersButton
@@ -21,7 +21,6 @@ const Home = ({
   riskDescription,
   riskGroup,
   riskInfo,
-  riskLevel,
   showBadge,
   triage,
   userName,
@@ -32,11 +31,12 @@ const Home = ({
       <Header hideBackButton />
       <Container>
         {showBadge && <Badge />}
-        <Smile
+        <Qualification
           userName={userName}
           lastDate={lastDate}
           riskGroup={riskGroup}
-          icon={riskLevel}
+          qrCode="https://safesafe-stage.thecoders.io/"
+          color={riskColor}
         />
         <BordersButton
           onClick={onClickGoToDiagnosis}

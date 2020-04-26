@@ -102,9 +102,9 @@ const HomeContainer = () => {
 
   const resolveRiskColor = (() => {
     switch (triageLevel) {
-      case 'quarantine': {
-        return Color.info;
-      }
+      // case 'quarantine': {
+      //   return Color.info;
+      // }
       case 'isolation_call': {
         return Color.danger;
       }

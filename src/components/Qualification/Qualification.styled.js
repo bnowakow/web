@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SmileContainer = styled.div`
+export const QualificationContainer = styled.div`
   grid-template-areas: 'name' 'text_wrapper';
   grid-template-rows: auto auto;
   margin-top: 20px;
@@ -40,6 +40,18 @@ export const IconSmile = styled.div`
   justify-content: center;
   align-items: center;
   img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+`;
+
+export const QRCodeWrapper = styled.div`
+  display: flex;
+  width: calc(100% - 216px);
+  justify-content: center;
+  align-items: center;
+  svg {
     display: block;
     max-width: 100%;
     height: auto;

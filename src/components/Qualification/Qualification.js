@@ -1,16 +1,17 @@
 import React from 'react';
+import { QRCodeGenerator } from '../QRCodeGenerator';
 
 import {
   TextWrapper,
-  SmileContainer,
+  QualificationContainer,
   UserName,
   Text,
-  IconSmile
-} from './Smile.styled';
+  QRCodeWrapper
+} from './Qualification.styled';
 
-const Smile = ({ userName, lastDate, riskGroup, icon }) => {
+const Qualification = ({ color, userName, lastDate, riskGroup, qrCode }) => {
   return (
-    <SmileContainer>
+    <QualificationContainer>
       <UserName>{userName},</UserName>
       <TextWrapper>
         <Text>
@@ -20,12 +21,12 @@ const Smile = ({ userName, lastDate, riskGroup, icon }) => {
             <strong>{riskGroup}</strong>.
           </p>
         </Text>
-        <IconSmile>
-          <img src={icon} alt={userName} />
-        </IconSmile>
+        <QRCodeWrapper>
+          <QRCodeGenerator qrCode={qrCode} color={color} />
+        </QRCodeWrapper>
       </TextWrapper>
-    </SmileContainer>
+    </QualificationContainer>
   );
 };
 
-export default Smile;
+export default Qualification;
