@@ -4,9 +4,10 @@ import { Header } from '../../components/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
 import { Container, Content, View } from '../../theme/grid';
-import { Title, Paragraph } from './ReportBug.styled';
+import { Title } from './ReportBug.styled';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
+import { Paragraph } from '../../theme/typography';
 import Email from '../../components/Email';
 
 const ReportBug = () => {
@@ -35,7 +36,5 @@ const ReportBug = () => {
     </View>
   );
 };
-
-ReportBug.propTypes = {};
 
 export default ReportBug;
