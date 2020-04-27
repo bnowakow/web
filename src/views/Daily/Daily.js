@@ -21,6 +21,20 @@ import {
 
 const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   const history = useHistory();
+  const renderDairyDays = previousDays.map(_obj => (
+    <DiaryListItem
+      key={_obj.timestamp}
+      onClick={() => goToHistory(_obj.timestamp)}
+    >
+      <span>
+        Wpis z dnia:
+        <br />
+        {_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
+      </span>
+
+      <img src={arrowRight} alt="arrow" />
+    </DiaryListItem>
+  ));
 
   return (
     <View>
@@ -37,22 +51,7 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
           </BordersButton>
           <DiaryHistory>
             <DiaryLabel>Dotychczasowe wpisy:</DiaryLabel>
-            <Diarylist>
-              {previousDays.map(_obj => (
-                <DiaryListItem
-                  key={_obj.timestamp}
-                  onClick={() => goToHistory(_obj.timestamp)}
-                >
-                  <span>
-                    Wpis z dnia:
-                    <br />
-                    {_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
-                  </span>
-
-                  <img src={arrowRight} alt="arrow" />
-                </DiaryListItem>
-              ))}
-            </Diarylist>
+            <Diarylist>{renderDairyDays}</Diarylist>
           </DiaryHistory>
         </Container>
         <BottomNavigation />
