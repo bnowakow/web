@@ -12,16 +12,18 @@ const ModalConfirmation = () => {
   const { setLoader } = useLoaderContext();
 
   const handleClose = () => {
-    localStorage.clear();
+    setLoader(true);
+    setTimeout(() => setLoader(false), 15000);
+    history.push(Routes.Home);
+
+    console.log( 'storage: check' );
+    console.log(localStorage);
+
+    console.log( 'location reload: 5s' );
+    setTimeout(() => { window.location.reload() }, 5000);
 
     onClose();
-
-    setLoader(true);
-    setTimeout(() => setLoader(false), 5000);
-    history.push(Routes.Home);
-  };
-
-  useEffect(() => () => window.location.reload(), []);
+  }
 
   return (
     <div className="user-data__modal-confirmation">

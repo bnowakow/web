@@ -6,8 +6,12 @@ import { ModalConfirmation } from '../ModalConfirmation';
 const ModalContent = () => {
   const { onClose, openModal } = useModalContext();
 
-  const handleSubmit = () => {
+  const handleErase = () => {
+    localStorage.clear();
     openModal(<ModalConfirmation />, 'dialog');
+
+    console.log( 'storage: check' );
+    console.log(localStorage);
   };
 
   return (
@@ -20,7 +24,7 @@ const ModalContent = () => {
         podać jeszcze raz wszystkie swoje dane.
       </p>
       <div className="buttons">
-        <Button onClick={handleSubmit} text="Tak" />
+        <Button onClick={handleErase} text="Tak" />
         <Button onClick={onClose} text="Nie" />
       </div>
     </div>
