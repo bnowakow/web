@@ -1,22 +1,29 @@
 import styled from 'styled-components';
+import { FontWeight } from '../../theme/fonts';
+import { Color } from '../../theme/colors';
 
-export const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const resolveDefaultColor = defaultColor => ({ color }) =>
+  color || defaultColor;
 
-  /* Temp solution - because of invalid DOM structure */
-  width: 100%;
-  min-height: 100vh;
-  min-height: calc(100vh - constant(safe-area-inset-top));
-  min-height: calc(100vh - env(safe-area-inset-top));
+const resolveDefaultFontWeight = defaultFontWeight => ({ fontWeight }) =>
+  fontWeight || defaultFontWeight;
+
+export const Title = styled.h1`
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #1b1b1b;
 `;
 
-export const Content = styled.p`
-  max-width: 375px;
-  padding: 15px;
-`;
-
-export const Email = styled.a`
-  color: #0052a5;
+export const Paragraph = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
+  color: ${resolveDefaultColor(Color.black)};
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
