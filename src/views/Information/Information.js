@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { Button, Container, FieldSet } from '../../components';
+import { Button, FieldSet } from '../../components';
 import { Header } from '../../components/Header';
-import { Content, View } from '../../theme/grid';
+import { Container, Content, View } from '../../theme/grid';
 import {
   Title,
   Paragraph1,
